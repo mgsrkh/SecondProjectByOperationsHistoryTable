@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SecondProjectByHistoryTable_Log_.ApplicationServices.IServices;
 using SecondProjectEFCoreAttributes.DTOs.Vendors;
+using System;
 using System.Threading.Tasks;
 
 namespace SecondProjectByHistoryTable_Log_.Controllers
@@ -59,7 +60,7 @@ namespace SecondProjectByHistoryTable_Log_.Controllers
         {
             var insertVendorResponse = await _vendorService.InsertVendorAsync(dto);
 
-            return Created(nameof(GetVendorByIdAsync), insertVendorResponse);
+            return Created(new Uri($"/api/Vendors/{insertVendorResponse.Id}", UriKind.Relative), insertVendorResponse);
         }
     }
 }

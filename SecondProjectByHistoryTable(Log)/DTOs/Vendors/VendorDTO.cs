@@ -22,6 +22,5 @@ namespace SecondProjectEFCoreAttributes.DTOs.Vendors
         public DateTime Date { get; set; }
         [TagIcollectionAttributes]
         public ICollection<TagDTO> Tags { get; set; }
-
     }
 }
