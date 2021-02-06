@@ -60,7 +60,7 @@ namespace SecondProjectByHistoryTable_Log_.Controllers
         {
             var insertVendorResponse = await _vendorService.InsertVendorAsync(dto);
 
-            return Created(new Uri($"/api/Vendors/{insertVendorResponse.Id}", UriKind.Relative), insertVendorResponse);
+            return Created(new Uri($"http://localhost:49931/api/Vendors/{insertVendorResponse.Id}", UriKind.Relative), insertVendorResponse);
         }
     }
 }
